@@ -5,8 +5,10 @@
     <string name="box_three">Box three</string>
     <string name="box_four">Box four</string>
     <string name="box_five">Box five</string>
-    <string name="button_one">Button one</string>
-    <string name="button_two">Button two</string>
-    <string name="button_three">Button three</string>
+    <string name="red_button">Red</string>
+    <string name="yellow_button">Yellow</string>
+    <string name="green_button">Green</string>
     <string name="change_colors">Change colors</string>
+    <string name="how_to_pay">How to play</string>
+    <string name="tap_the_boxes_and_buttons">Tap the screen and buttons</string>
 </resources>

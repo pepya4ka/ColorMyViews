@@ -27,24 +27,39 @@ class MainActivity : AppCompatActivity() {
                 binding.boxThreeText,
                 binding.boxFourText,
                 binding.boxFiveText,
-                binding.constraintLayout
+                binding.constraintLayout,
+                binding.redButton,
+                binding.yellowButton,
+                binding.greenButton
             )
 
         clickableViews.forEach { it -> it.setOnClickListener { makeColored(it) } }
         binding.changeColorsButton.setOnClickListener {
             clickableViews.forEach {
-                makeColored(it)
+                makeRandomColored(it)
             }
         }
     }
 
-    private fun makeColored(view: View) {
+    private fun makeRandomColored(view: View) {
         when (view.id) {
             R.id.box_one_text -> (view as TextView).setBackgroundAndTextColor()
             R.id.box_two_text -> (view as TextView).setBackgroundAndTextColor()
             R.id.box_three_text -> (view as TextView).setBackgroundAndTextColor()
             R.id.box_four_text -> (view as TextView).setBackgroundAndTextColor()
             R.id.box_five_text -> (view as TextView).setBackgroundAndTextColor()
+        }
+    }
+
+    private fun makeColored(view: View) {
+        when (view.id) {
+            R.id.box_one_text, R.id.box_two_text,
+            R.id.box_two_text, R.id.box_three_text,
+            R.id.box_four_text, R.id.box_five_text -> makeRandomColored(view)
+
+            R.id.red_button -> binding.boxThreeText.setBackgroundResource(R.color.my_red)
+            R.id.yellow_button -> binding.boxFourText.setBackgroundResource(R.color.my_yellow)
+            R.id.green_button -> binding.boxFiveText.setBackgroundResource(R.color.my_green)
             else -> view.setBackgroundColor(Color.LTGRAY)
         }
     }
